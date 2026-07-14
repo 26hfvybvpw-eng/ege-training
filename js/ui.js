@@ -193,7 +193,7 @@ class UIManager {
         this.elements.statsContent.innerHTML = '';
 
         if (Object.keys(stats).length === 0) {
-            this.elements.statsContent.innerHTML = '<p>Статистика пока не бдыщ бдыщ.</p>';
+            this.elements.statsContent.innerHTML = '<p>Статистика пока не собрана.</p>';
             return;
         }
 
