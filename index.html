@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тренажёр ЕГЭ</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Main Menu -->
+        <div id="main-menu" class="screen hidden">
+            <div class="container">
+                <h1 class="main-title">Тренажёр ЕГЭ</h1>
+                <div class="menu" id="main-menu-items"></div>
+            </div>
+        </div>
+
+        <!-- Section Selection -->
+        <div id="section-menu" class="screen hidden">
+            <div class="container">
+                <h1 class="main-title">Выберите раздел</h1>
+                <div class="menu" id="section-menu-items"></div>
+            </div>
+        </div>
+
+        <!-- Test Size Selection -->
+        <div id="size-menu" class="screen hidden">
+            <div class="container">
+                <h1 class="main-title">Сколько заданий решить?</h1>
+                <div class="menu" id="size-menu-items"></div>
+                <div id="custom-size-input" class="custom-size hidden">
+                    <p class="max-available">Максимум доступно: <span id="max-tasks">0</span></p>
+                    <input type="number" id="custom-tasks-input" class="input-field" placeholder="Число заданий">
+                    <button id="custom-tasks-submit" class="btn btn-primary">Начать</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Training Screen -->
+        <div id="training-screen" class="screen hidden">
+            <div class="container">
+                <div id="instruction-panel" class="instruction-panel hidden"></div>
+                
+                <div class="training-header">
+                    <div class="progress-info">
+                        <span id="question-counter">Вопрос 1 из 10</span>
+                        <span id="remaining-tasks">Осталось: 9</span>
+                    </div>
+                    <div class="session-stats">
+                        <span id="session-correct">Правильных: 0</span>
+                        <span id="session-wrong">Ошибок: 0</span>
+                    </div>
+                </div>
+
+                <div class="question-card">
+                    <div id="question-text" class="question-text"></div>
+                    <input type="text" id="answer-input" class="input-field" placeholder="Ваш ответ" autocomplete="off">
+                    <div class="button-group">
+                        <button id="submit-answer" class="btn btn-primary">Ответить</button>
+                        <button id="stop-session" class="btn btn-secondary">Остановить</button>
+                    </div>
+                </div>
+
+                <div id="feedback" class="feedback hidden"></div>
+            </div>
+        </div>
+
+        <!-- Results Screen -->
+        <div id="results-screen" class="screen hidden">
+            <div class="container">
+                <h1 class="main-title" id="results-title">Тест завершён</h1>
+                <div class="results-card">
+                    <div class="result-item">
+                        <span class="result-label">Решено:</span>
+                        <span class="result-value" id="result-total">0</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Правильных:</span>
+                        <span class="result-value" id="result-correct">0</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Ошибок:</span>
+                        <span class="result-value" id="result-wrong">0</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Успешность:</span>
+                        <span class="result-value" id="result-percent">0%</span>
+                    </div>
+                </div>
+                <div class="button-group">
+                    <button id="results-back" class="btn btn-primary">В меню</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Statistics Screen -->
+        <div id="stats-screen" class="screen hidden">
+            <div class="container">
+                <h1 class="main-title">Статистика</h1>
+                <div id="stats-content" class="stats-content"></div>
+                <div class="button-group">
+                    <button id="stats-back" class="btn btn-primary">В меню</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading Screen -->
+        <div id="loading-screen" class="screen hidden">
+            <div class="container">
+                <div class="loading-spinner"></div>
+                <p>Загрузка...</p>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
